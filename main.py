@@ -1,5 +1,6 @@
 import random
 from classes.person import Person
+from classes.cards import Cards
 
 
 name = [{"name": "A", "value": [1, 11]}, {"name": "2", "value": 2}, {"name": "3", "value": 3}, {"name": "4", "value": 4}
@@ -7,15 +8,9 @@ name = [{"name": "A", "value": [1, 11]}, {"name": "2", "value": 2}, {"name": "3"
         , {"name": "9", "value": 9}, {"name": "10", "value": 10}, {"name": "jack", "value": 10}
         , {"name": "queen", "value": 10}, {"name": "king", "value": 10}]
 kind = ["Hearts", "Clubs", "Diamonds", "Spades"]
-i = 0
-cards = list(range(1, 53))
-while i < 52:
 
-    for j in name:
-        for k in kind:
-            x = {"name": str(j["name"]) + "-" + str(k), "value": j["value"]}
-            cards[i] = x
-            i += 1
+# cards = list(range(1, 53))
+cards = Cards(name, kind).shuffle_deck()
 
 
 player = Person("player", "", 0, 0)
