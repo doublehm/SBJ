@@ -91,6 +91,12 @@ while running:
                     dealer.money += bet
                     print("dealer won!", "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")")
                     break
+
+                elif dealer.value_sum == 21:
+                    dealer.money += bet
+                    print("dealer won!", "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")")
+                    break
+
                 elif dealer.value_sum > 21:
                     player.money += (2 * bet)
                     dealer.money -= bet
