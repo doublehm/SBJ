@@ -1,11 +1,11 @@
 import random
 
 class Person:
-    def __init__(self, name, cards_holding, value_sum, points):
+    def __init__(self, name, cards_holding, value_sum, money):
 
         self.name = name
         self.value_sum = value_sum
-        self.points = points
+        self.money = money
         self.cards_holding = cards_holding
 
     def dealer_first_turn_generator(self, cards):
