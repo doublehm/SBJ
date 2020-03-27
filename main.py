@@ -63,6 +63,7 @@ while running:
             if player.value_sum < dealer.value_sum < 21:
                 print("dealer won! you lost")
                 break
+
             elif player.value_sum > 21:
                 print("you won!!")
                 break
