@@ -20,7 +20,7 @@ print("this is the game of blackjack")
 wanna_play = input("do you wanna proceed? (y/n): ")
 player.money = int(input("players credit: (ex. 500$ = 500) "))
 dealer.money = int(input("bank's credit: "))
-balance = "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")"
+
 running = True
 
 cards_value = 0
@@ -55,12 +55,12 @@ while running:
                 player.card_value_manager(player_extra_card)
                 if player.value_sum > 21:
                     dealer.money += bet
-                    print("you lost", balance)
+                    print("you lost", "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")")
                     break
                 elif player.value_sum == 21:
                     player.money += (2 * bet)
                     dealer.money -= bet
-                    print("wow! you won!", balance)
+                    print("wow! you won!", "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")")
                     break
                 else:
                     x = input("you want an extra card? (y/n): ")
@@ -72,13 +72,13 @@ while running:
 
             if player.value_sum < dealer.value_sum < 21:
                 dealer.money += bet
-                print("dealer won! you lost", balance)
+                print("dealer won! you lost", "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")")
                 break
 
             elif player.value_sum > 21:
                 player.money += (2 * bet)
                 dealer.money -= bet
-                print("you won!!", balance)
+                print("you won!!", "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")")
                 break
 
             while dealer.value_sum <= player.value_sum:
@@ -90,18 +90,18 @@ while running:
 
                 if 21 > dealer.value_sum > player.value_sum:
                     dealer.money += bet
-                    print("dealer won!", balance)
+                    print("dealer won!", "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")")
                     break
 
                 elif dealer.value_sum == 21:
                     dealer.money += bet
-                    print("dealer won!", balance)
+                    print("dealer won!", "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")")
                     break
 
                 elif dealer.value_sum > 21:
                     player.money += (2 * bet)
                     dealer.money -= bet
-                    print("you won!!", balance)
+                    print("you won!!", "balance: player(" + str(player.money) + ") bank(" + str(dealer.money) + ")")
             break
     elif wanna_play == "n":
         print("exiting game")
