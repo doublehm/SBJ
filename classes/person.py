@@ -45,7 +45,7 @@ class Person:
         self.cards_holding += " - " + item["name"]
         print(self.name + " is holding", self.cards_holding)
 
-    def cardgenerator(self, cards, running):
+    def cardgenerator(self, cards, running, name, kind):
 
         i = random.randrange(0, len(cards))
         generated_card = cards[i]

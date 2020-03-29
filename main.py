@@ -34,8 +34,8 @@ while running:
     if wanna_play == "y":
         print("great lets start")
 
-        dealer.dealer_first_turn_generator(cards, running)
-        player.player_first_turn_generator(cards, running)
+        dealer.dealer_first_turn_generator(cards, running, name, kind)
+        player.player_first_turn_generator(cards, running, name, kind)
         print("cards count: " + str(len(cards)))
 
         bet = int(input("place your bet: "))
@@ -49,7 +49,7 @@ while running:
 
             while not dealers_turn:
 
-                player_extra_card = player.cardgenerator(cards, running)
+                player_extra_card = player.cardgenerator(cards, running, name, kind)
                 print("cards count: " + str(len(cards)))
                 player.card_holding_manager(player_extra_card)
                 player.card_value_manager(player_extra_card)
@@ -83,7 +83,7 @@ while running:
 
             while dealer.value_sum <= player.value_sum:
 
-                dealers_card_extra = dealer.cardgenerator(cards, running)
+                dealers_card_extra = dealer.cardgenerator(cards, running, name, kind)
                 print("cards count: " + str(len(cards)))
                 dealer.card_holding_manager(dealers_card_extra)
                 dealer.card_value_manager(dealers_card_extra)
